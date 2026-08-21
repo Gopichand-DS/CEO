@@ -1,0 +1,1 @@
+export { default as Trusted } from "./Trusted";
