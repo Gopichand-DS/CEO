@@ -1,4 +1,4 @@
-alembic==1.18.5
+﻿alembic==1.18.5
 annotated-doc==0.0.4
 annotated-types==0.8.0
 anyio==4.14.2
@@ -48,7 +48,6 @@ python-docx==1.2.0
 python-dotenv==1.2.2
 python-jose==3.5.0
 python-multipart==0.0.32
-pywin32==312
 qdrant-client==1.19.0
 requests==2.34.2
 rsa==4.9.1
