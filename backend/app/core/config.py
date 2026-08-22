@@ -10,7 +10,7 @@ class Settings(BaseSettings):
     port: int
 
     database_url: str
-
+    frontend_url: str = "http://localhost:5173"
     # AI Settings
     ai_provider: str = "gemini"
 
@@ -25,8 +25,8 @@ class Settings(BaseSettings):
     # Qdrant
     # -----------------------------
 
-    qdrant_host: str = "localhost"
-    qdrant_port: int = 6333
+    qdrant_url: str = "https://555fa8b0-21eb-436d-ad92-a3af9f79baf7.eu-west-2-0.aws.cloud.qdrant.io"
+    qdrant_api_key: str = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3MiOiJtIiwic3ViamVjdCI6ImFwaS1rZXk6Y2U0YjUxMjEtM2YxZC00OTZhLTliNDAtNTY2NmYxYmRjZjlkIn0.q5Ej7yghkF5CbxcvsyVEQQmpCV99hqZHnBV5FmLMT08"
     qdrant_collection: str = "company_documents"
 
     model_config = SettingsConfigDict(

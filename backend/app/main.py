@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from app.api.routers.company import router as company_router
 from app.api.routers.health import router as health_router
 from app.core.config import settings
-from app.database.database import Base, engine
+
 from app.api.routers.user import router as user_router
 from app.api.routers.auth import router as auth_router
 from app.api.routers.employee import router as employee_router
@@ -33,7 +33,7 @@ from app.api.routers.finance import (
     router as finance_router,
 )
 from fastapi.middleware.cors import CORSMiddleware
-Base.metadata.create_all(bind=engine)
+
 
 app = FastAPI(
     title=settings.app_name,
@@ -47,6 +47,7 @@ async def startup_event():
     VectorService.initialize()
 
 origins = [
+    settings.frontend_url,
     "http://localhost:5173",
     "http://localhost:5174",
     "http://localhost:5175",

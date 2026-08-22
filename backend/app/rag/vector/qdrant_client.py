@@ -13,8 +13,8 @@ class QdrantConnection:
         if cls._client is None:
 
             cls._client = QdrantClient(
-                host=settings.qdrant_host,
-                port=settings.qdrant_port,
+                url=settings.qdrant_url,
+                api_key=settings.qdrant_api_key,
             )
 
         return cls._client

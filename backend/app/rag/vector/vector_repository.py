@@ -5,12 +5,11 @@ from qdrant_client.models import (
     MatchValue,
     VectorParams,
     Distance,
+    PayloadSchemaType,
 )
 
 from app.core.config import settings
-from app.rag.vector.qdrant_client import (
-    QdrantConnection,
-)
+from app.rag.vector.qdrant_client import QdrantConnection
 
 
 class VectorRepository:
@@ -21,7 +20,7 @@ class VectorRepository:
     def initialize():
         """
         Ensure the configured Qdrant collection exists
-        with the vector dimension used by Gemini Embedding 2.
+        and has the required payload indexes.
         """
 
         client = QdrantConnection.client()
@@ -41,6 +40,13 @@ class VectorRepository:
                     distance=Distance.COSINE,
                 ),
             )
+
+        # Required for company_id filtered searches
+        client.create_payload_index(
+            collection_name=settings.qdrant_collection,
+            field_name="company_id",
+            field_schema=PayloadSchemaType.INTEGER,
+        )
 
     @staticmethod
     def upsert(
