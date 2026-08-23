@@ -48,6 +48,8 @@ async def startup_event():
 
 origins = [
     settings.frontend_url,
+    "https://ceo-q2ji.vercel.app",
+    "https://ceo-q2ji-donre8gk-gopi-f826.vercel.app",
     "http://localhost:5173",
     "http://localhost:5174",
     "http://localhost:5175",
