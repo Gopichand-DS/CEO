@@ -47,15 +47,14 @@ export default function WorkflowTimeline() {
       <div
         className="
           grid
-          gap-12
+          items-stretch
+          gap-10
           lg:grid-cols-5
-          lg:items-start
         "
       >
         {workflowSteps.map((step, index) => (
           <WorkflowStep
             key={step.title}
-            step={index + 1}
             icon={step.icon}
             title={step.title}
             description={step.description}

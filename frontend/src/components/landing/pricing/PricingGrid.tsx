@@ -3,7 +3,7 @@ import PricingCard from "./PricingCard";
 const pricingPlans = [
   {
     name: "Starter",
-    price: "$29",
+    price: "$5",
     description:
       "Ideal for startups and small teams beginning their AI-powered executive journey.",
     features: [
@@ -15,7 +15,7 @@ const pricingPlans = [
   },
   {
     name: "Professional",
-    price: "$99",
+    price: "$12",
     description:
       "Perfect for growing businesses that need deeper AI insights and executive intelligence.",
     popular: true,

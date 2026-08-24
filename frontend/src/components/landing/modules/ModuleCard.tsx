@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { Card, IconBox } from "@/components/ui";
-
+import { Link } from "react-router-dom";
 interface ModuleCardProps {
   icon: LucideIcon;
   title: string;
@@ -47,24 +47,24 @@ export default function ModuleCard({
         ))}
       </ul>
 
-      <button
-        type="button"
-        className="
-          mt-8
-          inline-flex
-          items-center
-          gap-2
-          font-semibold
-          text-indigo-600
-          transition-all
-          duration-300
-          hover:gap-3
-        "
-      >
-        Learn More
+      <Link
+  to="/login"
+  className="
+    mt-8
+    inline-flex
+    items-center
+    gap-2
+    font-semibold
+    text-indigo-600
+    transition-all
+    duration-300
+    hover:gap-3
+  "
+>
+  Learn More
 
-        <ArrowRight className="h-4 w-4" />
-      </button>
+  <ArrowRight className="h-4 w-4" />
+</Link>
     </Card>
   );
 }

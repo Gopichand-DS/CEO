@@ -69,7 +69,7 @@ export default function FooterLinks() {
                   to={link.href}
                   className="
                     text-sm
-                    text-slate-400
+                    text-white/75
                     transition-all
                     duration-300
                     hover:text-white

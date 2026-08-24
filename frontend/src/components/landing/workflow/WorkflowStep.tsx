@@ -1,7 +1,7 @@
 import { ArrowDown, ArrowRight } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+
 interface WorkflowStepProps {
-  step: number;
   icon: LucideIcon;
   title: string;
   description: string;
@@ -9,21 +9,22 @@ interface WorkflowStepProps {
 }
 
 export default function WorkflowStep({
-  step,
   icon: Icon,
   title,
   description,
   isLast = false,
 }: WorkflowStepProps) {
   return (
-    <div className="flex flex-col items-center">
+    <div className="relative flex w-full flex-col items-center">
       {/* Step Card */}
       <div
         className="
           group
-          relative
+          flex
+          h-full
+          min-h-[430px]
           w-full
-          max-w-xs
+          flex-col
           rounded-3xl
           border
           border-slate-200
@@ -37,33 +38,13 @@ export default function WorkflowStep({
           hover:shadow-xl
         "
       >
-        {/* Step Number */}
-        <div
-          className="
-            absolute
-            -top-4
-            left-6
-            flex
-            h-9
-            w-9
-            items-center
-            justify-center
-            rounded-full
-            bg-indigo-600
-            text-sm
-            font-bold
-            text-white
-          "
-        >
-          {step}
-        </div>
-
         {/* Icon */}
         <div
           className="
             flex
             h-16
             w-16
+            shrink-0
             items-center
             justify-center
             rounded-2xl
@@ -91,10 +72,30 @@ export default function WorkflowStep({
       {!isLast && (
         <>
           {/* Desktop */}
-          <ArrowRight className="mt-8 hidden h-8 w-8 text-indigo-400 lg:block" />
+          <ArrowRight
+            className="
+              absolute
+              -right-7
+              top-1/2
+              hidden
+              h-8
+              w-8
+              -translate-y-1/2
+              text-indigo-400
+              lg:block
+            "
+          />
 
           {/* Mobile */}
-          <ArrowDown className="mt-8 h-8 w-8 text-indigo-400 lg:hidden" />
+          <ArrowDown
+            className="
+              mt-6
+              h-8
+              w-8
+              text-indigo-400
+              lg:hidden
+            "
+          />
         </>
       )}
     </div>

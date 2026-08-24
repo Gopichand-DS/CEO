@@ -6,7 +6,7 @@ import FooterLinks from "./FooterLinks";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-black">
+    <footer className="border-t border-white/10 bg-[#616161]">
       <Section spacing="lg">
         <Container>
           <div

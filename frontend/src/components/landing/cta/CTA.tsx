@@ -10,7 +10,7 @@ export default function CTA() {
       className="
         relative
         overflow-hidden
-        bg-black
+        bg-white
       "
     >
       <CTABackground />

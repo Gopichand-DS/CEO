@@ -43,7 +43,14 @@ export default function RegisterLeftPanel() {
       "
     >
       {/* Background */}
-      <div className="absolute inset-0 bg-black" />
+      <div
+  className="
+    absolute
+    inset-0
+    bg-black/75
+    backdrop-blur-2xl
+  "
+/>
 
       {/* Glow */}
       <div

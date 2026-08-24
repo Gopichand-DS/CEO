@@ -1,5 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
-
+import { Link } from "react-router-dom";
 import { Card } from "@/components/ui";
 
 interface StatisticCardProps {
@@ -61,11 +61,35 @@ export default function StatisticCard({
       </p>
 
       {/* Footer */}
-      <div className="mt-8 flex items-center justify-center gap-2 text-sm font-medium text-indigo-600">
-        <span>Business Impact</span>
+      <Link
+  to="/login"
+  className="
+    mt-8
+    flex
+    items-center
+    justify-center
+    gap-2
+    text-sm
+    font-medium
+    text-indigo-600
+    transition-all
+    duration-300
+    hover:gap-3
+  "
+>
+  <span>Business Impact</span>
 
-        <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-      </div>
+  <ArrowUpRight
+    className="
+      h-4
+      w-4
+      transition-transform
+      duration-300
+      group-hover:translate-x-1
+      group-hover:-translate-y-1
+    "
+  />
+</Link>
     </Card>
   );
 }

@@ -32,7 +32,7 @@ export default function FooterBrand() {
             Mini CEO
           </h3>
 
-          <p className="text-sm text-slate-400">
+          <p className="text-sm text-white/70">
             Executive Intelligence Platform
           </p>
         </div>
@@ -43,12 +43,12 @@ export default function FooterBrand() {
           mt-6
           text-base
           leading-7
-          text-slate-400
+          text-white/80
         "
       >
         Mini CEO empowers founders, executives, and leadership teams with
         AI-driven business intelligence, automated investigations,
-        executive reporting, and real-time operational insights—all from
+        executive reporting, and real time operational insights all from
         a secure, enterprise-ready platform.
       </p>
     </div>

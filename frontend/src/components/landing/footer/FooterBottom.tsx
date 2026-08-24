@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 const socialLinks = [
   {
     icon: Linkedin,
-    href: "https://linkedin.com",
+    href: "https://www.linkedin.com/in/vallapaneni-gopi-chand-51a70031a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     label: "LinkedIn",
   },
   {
     icon: Github,
-    href: "https://github.com",
+    href: "https://github.com/Gopichand-DS",
     label: "GitHub",
   },
   {
@@ -45,7 +45,7 @@ export default function FooterBottom() {
         justify-between
         gap-8
         border-t
-        border-slate-200
+        border-white/30
         pt-8
         lg:flex-row
       "
@@ -56,7 +56,7 @@ export default function FooterBottom() {
           items-center
           gap-2
           text-sm
-          text-slate-600
+          text-white
         "
       >
         <Copyright className="h-4 w-4" />
@@ -81,9 +81,9 @@ export default function FooterBottom() {
             to={link.href}
             className="
               text-sm
-              text-slate-600
+              text-white/80
               transition-colors
-              hover:text-indigo-600
+              hover:text-white
             "
           >
             {link.label}
@@ -107,13 +107,13 @@ export default function FooterBottom() {
               justify-center
               rounded-full
               border
-              border-slate-200
-              text-slate-500
+              border-white/60
+              text-white
               transition-all
               duration-300
-              hover:border-indigo-600
-              hover:bg-indigo-600
-              hover:text-white
+              hover:border-white
+              hover:bg-white
+              hover:text-[#616161]
             "
           >
             <Icon className="h-5 w-5" />

@@ -5,7 +5,13 @@ import NavActions from "./NavActions";
 import NavLinks from "./NavLinks";
 import NavLogo from "./NavLogo";
 
-export default function MobileNav() {
+interface MobileNavProps {
+  onLogin?: () => void;
+}
+
+export default function MobileNav({
+  onLogin,
+}: MobileNavProps) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -132,8 +138,9 @@ export default function MobileNav() {
           {/* Actions */}
           <div className="mt-8">
             <NavActions
-              mobile
-              onNavigate={() => setOpen(false)}
+                mobile
+                onNavigate={() => setOpen(false)}
+                onLogin={onLogin}
             />
           </div>
         </div>

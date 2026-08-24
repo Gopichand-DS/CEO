@@ -16,12 +16,11 @@ export default function CTAContent() {
         className="
           rounded-3xl
           border
-          border-white/10
-          bg-white/[0.04]
+          border-slate-200
+          bg-white
           px-8
           py-16
-          backdrop-blur-2xl
-          shadow-2xl
+          shadow-xl
           md:px-16
         "
       >
@@ -36,10 +35,9 @@ export default function CTAContent() {
           <Badge
             className="
               border
-              border-white/15
-              bg-white/10
-              text-white
-              backdrop-blur-xl
+              border-indigo-200
+              bg-indigo-50
+              text-indigo-700
             "
           >
             Executive Intelligence Platform
@@ -52,7 +50,7 @@ export default function CTAContent() {
               font-bold
               leading-tight
               tracking-tight
-              text-white
+              text-slate-900
               md:text-5xl
               lg:text-6xl
             "
@@ -60,7 +58,7 @@ export default function CTAContent() {
             Ready to Transform
             <br />
 
-            <span className="text-white">
+            <span className="text-slate-900">
               Your Business with AI?
             </span>
           </h2>
@@ -71,7 +69,7 @@ export default function CTAContent() {
               max-w-3xl
               text-lg
               leading-8
-              text-slate-400
+              text-slate-600
             "
           >
             Empower your executives with intelligent investigations,
@@ -91,7 +89,7 @@ export default function CTAContent() {
               justify-center
               gap-8
               text-sm
-              text-slate-400
+              text-slate-600
             "
           >
             <span>✓ No Credit Card Required</span>

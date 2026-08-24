@@ -2,7 +2,7 @@ export default function CTABackground() {
   return (
     <>
       {/* Black Background */}
-      <div className="absolute inset-0 bg-black" />
+      <div className="absolute inset-0 bg-white" />
 
       {/* Top Left Glow */}
       <div

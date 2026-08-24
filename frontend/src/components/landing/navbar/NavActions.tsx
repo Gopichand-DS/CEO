@@ -5,11 +5,13 @@ import { Button } from "@/components/ui";
 
 interface NavActionsProps {
   mobile?: boolean;
+  onLogin?: () => void;
   onNavigate?: () => void;
 }
 
 export default function NavActions({
   mobile = false,
+  onLogin,
   onNavigate,
 }: NavActionsProps) {
   if (mobile) {
@@ -29,13 +31,23 @@ export default function NavActions({
           hover:text-black
         "
       >
-        <Link
-          to="/login"
-          onClick={onNavigate}
-          className="flex w-full items-center justify-center text-black font-semibold"
-        >
-          Login
-        </Link>
+        <button
+  type="button"
+  onClick={() => {
+    onNavigate?.();
+    onLogin?.();
+  }}
+  className="
+    flex
+    w-full
+    items-center
+    justify-center
+    text-black
+    font-semibold
+  "
+>
+  Login
+</button>
       </Button>
 
       {/* Get Started */}
@@ -82,11 +94,13 @@ export default function NavActions({
         className=" h-10 rounded-xl bg-white px-6 text-black hover:bg-slate-100"
         
       >
-        <Link to="/login"
-         className="font-semibold text-black"
-         >
-          Login
-        </Link>
+        <button
+  type="button"
+  onClick={onLogin}
+  className="font-semibold text-black"
+>
+  Login
+</button>
       </Button>
 
       <Button

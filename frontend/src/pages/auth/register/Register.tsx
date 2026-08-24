@@ -6,7 +6,8 @@ import RegisterLeftPanel from "./RegisterLeftPanel";
 export default function Register() {
   return (
     <AuthLayout
-      leftPanel={<RegisterLeftPanel />}
+  variant="glass"
+  leftPanel={<RegisterLeftPanel />}
     >
       <RegisterForm />
     </AuthLayout>
