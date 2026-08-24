@@ -37,18 +37,18 @@ export default function HeroDashboard() {
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           <Stat
             label="Today's Revenue"
-            value="$248K"
+            value="$0"
             trend={{
-              value: "+12.8%",
+              value: "+0%",
               positive: true,
             }}
           />
 
           <Stat
             label="Active Projects"
-            value="42"
+            value="0"
             trend={{
-              value: "+6",
+              value: "+0",
               positive: true,
             }}
           />
@@ -89,7 +89,7 @@ export default function HeroDashboard() {
             <div className="flex items-center gap-1 font-semibold text-emerald-600">
               <TrendingUp className="h-4 w-4" />
 
-              18%
+              0%
             </div>
           </div>
 
@@ -117,7 +117,7 @@ export default function HeroDashboard() {
             </div>
 
             <div className="flex items-center gap-1 font-semibold text-amber-600">
-              3
+              0
 
               <ArrowUpRight className="h-4 w-4" />
             </div>

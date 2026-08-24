@@ -18,7 +18,7 @@ export default function Hero() {
           <HeroContent />
 
           {/* Right Side */}
-          <div className="flex justify-center lg:justify-end">
+          <div className="flex -translate-y-26 justify-center lg:justify-end">
             <HeroDashboard />
           </div>
         </div>

@@ -1,4 +1,3 @@
-import { Bot } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function NavLogo() {
@@ -15,17 +14,20 @@ export default function NavLogo() {
           w-11
           items-center
           justify-center
+          overflow-hidden
           rounded-2xl
-          bg-[#4F46E5]
-          text-white
+          bg-[#fbf6e3]
           shadow-lg
           transition-all
           duration-300
           group-hover:scale-105
-          group-hover:shadow-indigo-500/30
         "
       >
-        <Bot className="h-6 w-6" />
+        <img
+          src="/logo.png"
+          alt="Mini CEO"
+          className="h-full w-full object-cover"
+        />
       </div>
 
       <div className="flex flex-col leading-none">

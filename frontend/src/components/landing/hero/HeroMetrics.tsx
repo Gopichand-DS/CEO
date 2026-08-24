@@ -30,7 +30,7 @@ const metrics = [
 
 export default function HeroMetrics() {
   return (
-    <div className="mt-10 grid grid-cols-2 gap-5 md:grid-cols-4">
+    <div className="mt-10 flex flex-wrap gap-5">
       {metrics.map((metric) => {
         const Icon = metric.icon;
 
@@ -38,6 +38,8 @@ export default function HeroMetrics() {
           <div
             key={metric.subtitle}
             className="
+              w-fit
+              min-w-[160px]
               rounded-2xl
               border
               border-slate-200
@@ -57,6 +59,7 @@ export default function HeroMetrics() {
                   flex
                   h-11
                   w-11
+                  shrink-0
                   items-center
                   justify-center
                   rounded-xl
@@ -67,12 +70,12 @@ export default function HeroMetrics() {
                 <Icon className="h-5 w-5" />
               </div>
 
-              <div>
-                <h3 className="text-lg font-bold text-slate-900">
+              <div className="whitespace-nowrap">
+                <h3 className="text-lg font-bold leading-tight text-slate-900">
                   {metric.title}
                 </h3>
 
-                <p className="text-sm text-slate-500">
+                <p className="mt-1 text-sm leading-tight text-slate-500">
                   {metric.subtitle}
                 </p>
               </div>
@@ -81,5 +84,5 @@ export default function HeroMetrics() {
         );
       })}
     </div>
-  );  
+  );
 }

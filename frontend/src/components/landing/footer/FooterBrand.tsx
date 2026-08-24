@@ -1,4 +1,3 @@
-import { BrainCircuit } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function FooterBrand() {
@@ -15,15 +14,17 @@ export default function FooterBrand() {
             w-11
             items-center
             justify-center
+            overflow-hidden
             rounded-xl
-            bg-gradient-to-br
-            from-indigo-600
-            to-violet-600
-            text-white
+            bg-[#fbf6e3]
             shadow-xl
           "
         >
-          <BrainCircuit className="h-6 w-6" />
+          <img
+            src="/logo.png"
+            alt="Mini CEO"
+            className="h-full w-full object-cover"
+          />
         </div>
 
         <div>

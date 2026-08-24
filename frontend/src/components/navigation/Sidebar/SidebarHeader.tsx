@@ -1,19 +1,22 @@
 import styles from "./Sidebar.module.css";
 
 const SidebarHeader = () => {
-    return (
-        <div className={styles.header}>
-            <div className={styles.logo}>
-                MC
-            </div>
+  return (
+    <div className={styles.header}>
+      <div className={styles.logo}>
+        <img
+          src="/logo.png"
+          alt="Mini CEO"
+        />
+      </div>
 
-            <div>
-                <h2>Mini CEO</h2>
+      <div>
+        <h2>Mini CEO</h2>
 
-                <p>Executive Intelligence</p>
-            </div>
-        </div>
-    );
+        <p>Executive Intelligence</p>
+      </div>
+    </div>
+  );
 };
 
 export default SidebarHeader;
