@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { Card, IconBox } from "@/components/ui";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 interface ModuleCardProps {
   icon: LucideIcon;
   title: string;
@@ -15,6 +15,7 @@ export default function ModuleCard({
   description,
   features,
 }: ModuleCardProps) {
+  const location = useLocation();
   return (
     <Card
       hover
@@ -49,6 +50,7 @@ export default function ModuleCard({
 
       <Link
   to="/login"
+  state={{ backgroundLocation: location }}
   className="
     mt-8
     inline-flex
