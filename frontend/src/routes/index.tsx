@@ -7,8 +7,9 @@ import {
 
 import LandingPage from "@/pages/landing/LandingPage";
 import Login from "@/pages/auth/login/Login";
+import LoginForm from "@/pages/auth/login/LoginForm";
 import Register from "@/pages/auth/register/Register";
-import LoginFormForModal from "@/pages/auth/login/LoginForm";
+
 import TasksPage from "@/pages/dashboard/tasks/TasksPage";
 import TeamsPage from "@/pages/dashboard/teams/TeamsPage";
 import DashboardLayout from "@/pages/dashboard/DashBoardLayout";
@@ -23,7 +24,6 @@ import NotificationsPage from "@/pages/dashboard/notifications/NotificationsPage
 
 import ProtectedRoute from "./ProtectedRoute";
 
-
 export default function AppRoutes() {
   const location = useLocation();
 
@@ -32,15 +32,12 @@ export default function AppRoutes() {
 
   return (
     <>
-      {/* 
-        Main application routes.
-
-        When opening Login from the landing page,
-        React Router continues rendering the landing page
-        because we use the saved background location.
-      */}
-      <Routes location={backgroundLocation || location}>
-
+      {/* Main application routes */}
+      <Routes
+        location={
+          backgroundLocation || location
+        }
+      >
         {/* Public Routes */}
 
         <Route
@@ -57,7 +54,6 @@ export default function AppRoutes() {
           path="/register"
           element={<Register />}
         />
-
 
         {/* Protected Dashboard */}
 
@@ -118,16 +114,9 @@ export default function AppRoutes() {
             element={<SettingsPage />}
           />
         </Route>
-
       </Routes>
 
-
-      {/* 
-        Login modal.
-
-        This is rendered only when Login was opened
-        from another page using backgroundLocation.
-      */}
+      {/* Login Modal */}
       {backgroundLocation && (
         <Routes>
           <Route
@@ -141,9 +130,8 @@ export default function AppRoutes() {
 }
 
 
-/*
- * Login displayed as a centered glass modal.
- */
+/* Login Modal */
+
 function LoginModal() {
   const navigate = useNavigate();
 
@@ -156,8 +144,9 @@ function LoginModal() {
       className="
         fixed
         inset-0
-        z-[100]
+        z-[9999]
         flex
+        min-h-screen
         items-center
         justify-center
         overflow-y-auto
@@ -166,10 +155,15 @@ function LoginModal() {
         backdrop-blur-xl
         sm:p-10
       "
-      onClick={handleClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Login"
+      onMouseDown={handleClose}
     >
+      {/* Black Glass Overlay */}
       <div
         className="
+          pointer-events-none
           absolute
           inset-0
           bg-black/40
@@ -177,6 +171,7 @@ function LoginModal() {
         "
       />
 
+      {/* Centered Login */}
       <div
         className="
           relative
@@ -184,11 +179,10 @@ function LoginModal() {
           w-full
           max-w-xl
         "
-        onClick={(event) => event.stopPropagation()}
+        onMouseDown={(event) => {
+          event.stopPropagation();
+        }}
       >
-        <LoginFormForModal />
-      </div>
-
         {/* Close Button */}
         <button
           type="button"
@@ -196,12 +190,12 @@ function LoginModal() {
           aria-label="Close login"
           className="
             absolute
-            right-5
-            top-5
+            -right-3
+            -top-3
             z-20
             flex
-            h-9
-            w-9
+            h-10
+            w-10
             items-center
             justify-center
             rounded-full
@@ -209,7 +203,7 @@ function LoginModal() {
             border-slate-200
             bg-white
             text-slate-500
-            shadow-sm
+            shadow-xl
             transition-all
             duration-200
             hover:bg-slate-100
@@ -219,17 +213,8 @@ function LoginModal() {
           ×
         </button>
 
-        <LoginFormWrapper />
+        <LoginForm />
       </div>
+    </div>
   );
-}
-
-
-/*
- * LoginForm already contains the actual white login card.
- * We remove the outer Card styling from the modal by
- * rendering the existing form directly.
- */
-function LoginFormWrapper() {
-  return <LoginFormForModal />;
 }
