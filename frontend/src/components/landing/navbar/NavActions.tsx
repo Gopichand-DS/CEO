@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import { Button } from "@/components/ui";
 
@@ -14,6 +14,7 @@ export default function NavActions({
   onLogin,
   onNavigate,
 }: NavActionsProps) {
+  const location = useLocation();
   if (mobile) {
   return (
     <div className="mt-8 flex flex-col gap-3">
@@ -34,6 +35,7 @@ export default function NavActions({
         <button
   type="button"
   onClick={() => {
+    
     onNavigate?.();
     onLogin?.();
   }}
@@ -66,6 +68,7 @@ export default function NavActions({
         <Link
           to="/register"
           onClick={onNavigate}
+          state={{ backgroundLocation: location }}
           className="flex w-full items-center justify-center text-white font-semibold"
         >
           Get Started
@@ -108,6 +111,7 @@ export default function NavActions({
         className=" group rounded-xl bg-indigo-600 px-6 text-white shadow-lg transition-all duration-300 hover:bg-indigo-500 hover:text-white active:bg-indigo-700 border-0 "
       >
         <Link to="/register"
+        state={{ backgroundLocation: location }}
         className="flex items-center font-semibold text-white"
         >
           Get Started
