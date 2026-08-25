@@ -10,7 +10,7 @@ interface MobileNavProps {
 }
 
 export default function MobileNav({
-  onLogin,
+  
 }: MobileNavProps) {
   const [open, setOpen] = useState(false);
 
@@ -140,7 +140,7 @@ export default function MobileNav({
             <NavActions
                 mobile
                 onNavigate={() => setOpen(false)}
-                onLogin={onLogin}
+                
             />
           </div>
         </div>
